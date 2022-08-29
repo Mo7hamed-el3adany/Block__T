@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  api-dev:
+    container_name: BlackStone-CRUD
+    restart: unless-stopped
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    # env_file:
+    #   - ./api/.env
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017/BlackStone 
+      - PORT=8080
+    volumes:
+      - ./api:/app/
+    depends_on:
+      - mongo
+    networks:
+      - BlackStone
+
+  mongo:
+    image: mongo:5.0.5
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+    networks:
+      - BlackStone
+
+volumes:
+  mongodb:
+
+networks:
+  BlackStone:
