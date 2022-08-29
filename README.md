@@ -1,4 +1,9 @@
 ## Referance
+
+  2. Run frist Ex_1.      
+    - `docker-compose up "`     
+
+
 <a name="One"></a>
 
 ### I. Commonly used commands in docker:
