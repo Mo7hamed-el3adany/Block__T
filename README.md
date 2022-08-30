@@ -91,7 +91,7 @@
 
  
 
-  ## I. Commonly used commands in K8S:
+  ## 2. Commonly used commands in K8S:
   
    
 ## PODS
